@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <link href="/main.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@5.0.0/bundles/stomp.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<div class="container" id="main-content">
+    <div class="row">
+        <div class="col-md-10">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket connection:</label>
+                    <button class="btn btn-default" id="connect" type="submit">Connect</button>
+                    <button class="btn btn-default" id="connectSockJS" type="submit">ConnectSockJS</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+            <form class="form-inline">
+                <div class="form-group">
+                    <button class="btn btn-default" disabled="disabled" id="disconnect" type="submit">
+                        Disconnect
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="from">Username:</label>
+                    <input class="form-control" id="from" placeholder="Username..." type="text">
+                    <label for="message">Message:</label>
+                    <input class="form-control" id="message" placeholder="Your message here..." type="text">
+                </div>
+                <button class="btn btn-default" id="send" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped" id="responses">
+                <thead>
+                <tr>
+                    <th>Messages</th>
+                </tr>
+                </thead>
+                <tbody id="messages">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
